@@ -5,7 +5,11 @@ sudo apt-get update
 #CMake Install
 sudo apt-get install -y cmake
 
-#Java Insall
+#Java Intsall
+sudo apt-get install -y software-properties-common
+sudo apt-get install -y python-software-properties
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
 sudo apt-get install -y oracle-java8-installer
 
 #G-Test Install
