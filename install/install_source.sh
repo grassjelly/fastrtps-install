@@ -39,6 +39,7 @@ cd Fast-RTPS
 #Set ENV variables for fastrtpsgen and FASTRTPSHOME
 echo "export FASTRTPSHOME=${PWD}" >> ~/.bashrc
 echo "export PATH=$PATH:${PWD}/fastrtpsgen/scripts" >> ~/.bashrc
+echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$FASTRTPSHOME/build/external/install/lib" >> ~/.bashrc
 
 mkdir build -p && cd build
 cmake -DTHIRDPARTY=ON -DBUILD_JAVA=ON ..
