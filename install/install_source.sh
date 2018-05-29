@@ -33,7 +33,7 @@ export PATH=$PATH:/opt/gradle/gradle-3.4/bin
 rm gradle-3.4-bin.zip
 
 #FastRTPS Install
-git clone --recursive https://github.com/eProsima/Fast-RTPS
+git clone https://github.com/eProsima/Fast-RTPS
 cd Fast-RTPS
 
 #Set ENV variables for fastrtpsgen and FASTRTPSHOME
@@ -41,12 +41,8 @@ echo "export FASTRTPSHOME=${PWD}" >> ~/.bashrc
 echo "export PATH=$PATH:${PWD}/fastrtpsgen/scripts" >> ~/.bashrc
 
 mkdir build -p && cd build
-cmake ../ -DEPROSIMA_BUILD=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=install
+cmake -DTHIRDPARTY=ON -DBUILD_JAVA=ON ..
 make
 make install
-
-#CodeGen Install
-cd ../fastrtpsgen
-gradle build
 
 echo "Installation Done!"
